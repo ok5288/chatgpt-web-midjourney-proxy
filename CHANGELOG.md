@@ -1,615 +1,451 @@
-## v2.11.1
-
-`2023-10-11`
-
-## Enhancement
-- 优化打字机光标效果
-- 清空聊天历史按钮
-- 更新文档
-
-## BugFix
-- 修复移动端上的问题
-- 修复不规范的引入导致的问题
-
-## v2.11.0
-
-`2023-04-26`
-
-> [chatgpt-web-plus](https://github.com/Chanzhaoyu/chatgpt-web-plus) 新界面、完整用户管理
-
-## Enhancement
-- 更新默认 `accessToken` 反代地址为 [[pengzhile](https://github.com/pengzhile)] 的 `https://ai.fakeopen.com/api/conversation` [[24min](https://github.com/Chanzhaoyu/chatgpt-web/pull/1567/files)]
-- 添加自定义 `temperature` 和 `top_p` [[quzard](https://github.com/Chanzhaoyu/chatgpt-web/pull/1260)]
-- 优化代码 [[shunyue1320](https://github.com/Chanzhaoyu/chatgpt-web/pull/1328)]
-- 优化复制代码反馈效果
-
-## BugFix
-- 修复余额查询和文案 [[luckywangxi](https://github.com/Chanzhaoyu/chatgpt-web/pull/1174)][[zuoning777](https://github.com/Chanzhaoyu/chatgpt-web/pull/1296)]
-- 修复默认语言错误 [[idawnwon](https://github.com/Chanzhaoyu/chatgpt-web/pull/1352)]
-- 修复 `onRegenerate` 下问题 [[leafsummer](https://github.com/Chanzhaoyu/chatgpt-web/pull/1188)]
-
-## Other
-- 引导用户触发提示词 [[RyanXinOne](https://github.com/Chanzhaoyu/chatgpt-web/pull/1183)]
-- 添加韩语翻译 [[Kamilake](https://github.com/Chanzhaoyu/chatgpt-web/pull/1372)]
-- 添加俄语翻译 [[aquaratixc](https://github.com/Chanzhaoyu/chatgpt-web/pull/1571)]
-- 优化翻译和文本检查 [[PeterDaveHello](https://github.com/Chanzhaoyu/chatgpt-web/pull/1460)]
-- 移除无用文件
-
-## v2.10.9
-
-`2023-04-03`
+# 功能升级日志
 
-> 更新默认 `accessToken` 反代地址为 [[pengzhile](https://github.com/pengzhile)] 的 `https://ai.fakeopen.com/api/conversation`
+#  计划 
+# 2.21.8
+- 😄 新增：flux.1.1-pro 画图模型
+- 😄 新增：runway3 支持 参考视频
 
-## Enhancement
-- 添加 `socks5` 代理认证 [[yimiaoxiehou](https://github.com/Chanzhaoyu/chatgpt-web/pull/999)]
-- 添加 `socks` 代理用户名密码的配置 [[hank-cp](https://github.com/Chanzhaoyu/chatgpt-web/pull/890)]
-- 添加可选日志打印 [[zcong1993](https://github.com/Chanzhaoyu/chatgpt-web/pull/1041)]
-- 更新侧边栏按钮本地化[[simonwu53](https://github.com/Chanzhaoyu/chatgpt-web/pull/911)]
-- 优化代码块滚动条高度 [[Fog3211](https://github.com/Chanzhaoyu/chatgpt-web/pull/1153)]
-## BugFix
-- 修复 `PWA` 问题 [[bingo235](https://github.com/Chanzhaoyu/chatgpt-web/pull/807)]
-- 修复 `ESM` 错误 [[kidonng](https://github.com/Chanzhaoyu/chatgpt-web/pull/826)]
-- 修复反向代理开启时限流失效的问题 [[gitgitgogogo](https://github.com/Chanzhaoyu/chatgpt-web/pull/863)]
-- 修复 `docker` 构建时 `.env` 可能被忽略的问题 [[zaiMoe](https://github.com/Chanzhaoyu/chatgpt-web/pull/877)]
-- 修复导出异常错误 [[KingTwinkle](https://github.com/Chanzhaoyu/chatgpt-web/pull/938)]
-- 修复空值异常 [[vchenpeng](https://github.com/Chanzhaoyu/chatgpt-web/pull/1103)]
-- 移动端上的体验问题
-
-## Other
-- `Docker` 容器名字名义 [[LOVECHEN](https://github.com/Chanzhaoyu/chatgpt-web/pull/1035)]
-- `kubernetes` 部署配置 [[CaoYunzhou](https://github.com/Chanzhaoyu/chatgpt-web/pull/1001)]
-- 感谢 [[assassinliujie](https://github.com/Chanzhaoyu/chatgpt-web/pull/962)] 和 [[puppywang](https://github.com/Chanzhaoyu/chatgpt-web/pull/1017)] 的某些贡献
-- 更新 `kubernetes/deploy.yaml` [[idawnwon](https://github.com/Chanzhaoyu/chatgpt-web/pull/1085)]
-- 文档更新 [[#yi-ge](https://github.com/Chanzhaoyu/chatgpt-web/pull/883)]
-- 文档更新 [[weifeng12x](https://github.com/Chanzhaoyu/chatgpt-web/pull/880)]
-- 依赖更新
-
-## v2.10.8
+# 2.21.7
+- 😄 新增：claude-3-5-sonnet-20241022 
 
-`2023-03-23`
-
-如遇问题，请删除 `node_modules` 重新安装依赖。
+# 2.21.6
+- 😄 新增：pika 文生视频 图生视频
+- 🐞 修复：luma 支持长宽比例
 
-## Feature
-- 显示回复消息原文的选项 [[yilozt](https://github.com/Chanzhaoyu/chatgpt-web/pull/672)]
-- 添加单 `IP` 每小时请求限制。环境变量： `MAX_REQUEST_PER_HOUR` [[zhuxindong ](https://github.com/Chanzhaoyu/chatgpt-web/pull/718)]
-- 前端添加角色设定，仅 `API` 方式可见 [[quzard](https://github.com/Chanzhaoyu/chatgpt-web/pull/768)]
-- `OPENAI_API_MODEL` 变量现在对 `ChatGPTUnofficialProxyAPI` 也生效，注意：`Token` 和 `API` 的模型命名不一致，不能直接填入 `gpt-3.5` 或者 `gpt-4` [[hncboy](https://github.com/Chanzhaoyu/chatgpt-web/pull/632)]
-- 添加繁体中文 `Prompts` [[PeterDaveHello](https://github.com/Chanzhaoyu/chatgpt-web/pull/796)]
+# 2.21.5
+- 🐞 修复：luam、runway视频删除、viggle删除、kling删除、suno删除？ #510
 
-## Enhancement
-- 重置回答时滚动定位至该回答 [[shunyue1320](https://github.com/Chanzhaoyu/chatgpt-web/pull/781)]
-- 当 `API` 是 `gpt-4` 时增加可用的 `Max Tokens` [[simonwu53](https://github.com/Chanzhaoyu/chatgpt-web/pull/729)]
-- 判断和忽略回复字符 [[liut](https://github.com/Chanzhaoyu/chatgpt-web/pull/474)]
-- 切换会话时，自动聚焦输入框 [[JS-an](https://github.com/Chanzhaoyu/chatgpt-web/pull/735)]
-- 渲染的链接新窗口打开
-- 查询余额可选 `API_BASE_URL` 代理地址
-- `config` 接口添加验证防止被无限制调用
-- `PWA` 默认不开启，现在需手动修改 `.env` 文件 `VITE_GLOB_APP_PWA` 变量
-- 当网络连接时，刷新页面，`500` 错误页自动跳转到主页
+# 2.21.4
+- 😄 新增：runway图片增加首尾帧选择
 
-## BugFix
-- `scrollToBottom` 调回 `scrollToBottomIfAtBottom` [[shunyue1320](https://github.com/Chanzhaoyu/chatgpt-web/pull/771)]
-- 重置异常的 `loading` 会话
+# 2.21.3
+- 🐞 修复：回复数最多只有4096太少导致有时无法正常输出 #516
+- 😄 优化：支持实时语音对话服务中的设置
 
-## Common
-- 创建 `start.cmd` 在 `windows` 下也可以运行 [vulgatecnn](https://github.com/Chanzhaoyu/chatgpt-web/pull/656)]
-- 添加 `visual-studio-code` 中调试配置 [[ChandlerVer5](https://github.com/Chanzhaoyu/chatgpt-web/pull/296)]
-- 修复文档中 `docker` 端口为本地 [[kilvn](https://github.com/Chanzhaoyu/chatgpt-web/pull/802)]
-## Other
-- 依赖更新
+# 2.21.2
+- 😄 新增：支持实时语音对话服务 realtime `gpt-4o-realtime-preview`
 
+# 2.21.1
+- 😄 优化：dall格式图片本地存储（flex,idemgram 不会图片链接过期而找不到 ）
+- 😄 优化：kling图片本地存储
+
+# 2.20.10
+- 😄 新增：模型 `o1-preview` `o1-mini`
+
+# 2.20.9
+- 🐞 修复：kling 图片提交
+- 😄 新增：可灵 kling 的镜头运用
+
+# 2.20.8
+- 😄 新增：可灵 kling 视频 绘图模块
 
-## v2.10.7
+# 2.20.7
+- 😄 新增：runway 可以 extend
+- 🐞 修复：ideogram 清空
 
-`2023-03-17`
+# 2.20.6
+- 😄 新增： 画图 ideogram 相关模块
 
-## BugFix
-- 回退 `chatgpt` 版本，原因：导致 `OPENAI_API_BASE_URL` 代理失效
-- 修复缺省状态的 `usingContext` 默认值
+# 2.20.5
+- 😄 新增： flux 相关模型的dall.e格式
+- 🐞 修复：claude-3-5，maxtoken问题 #495
 
-## v2.10.6
+# 2.20.4
+- 🐞 修复：更新了背景图版本后。聊天窗口内容上下滚动有时候会失效，要重新刷新页面才能滚动 #490
+- 🐞 修复：docker部署能不用在编排的时候填写key
 
-`2023-03-17`
+# 2.20.3
+- 🤖 合并： 新增自定义背景图片 #488 @Yanyutin753
+- 💄 合并： 优化文件上传样式 #487 @Yanyutin753
+- 💄 合并： AUTH_SECRET_KEY 新增多密钥支持，使用,隔开 #484 @Yanyutin753 
+- 😄 新增： runway Gen3a Turbo
+- 😄 新增： UI服务端 同步 `runway` `viggle` 设置
 
-## Feature
-- 显示 `API` 余额 [[pzcn](https://github.com/Chanzhaoyu/chatgpt-web/pull/582)]
+# 2.20.2
+- 😄 新增：gemini-1.5-pro-exp-0801
+- 😄 新增：chatgpt-4o-latest
 
-## Enhancement
-- 美化滚动条样式和 `UI` 保持一致 [[haydenull](https://github.com/Chanzhaoyu/chatgpt-web/pull/617)]
-- 优化移动端 `Prompt` 样式 [[CornerSkyless](https://github.com/Chanzhaoyu/chatgpt-web/pull/608)]
-- 上下文开关改为全局开关，现在记录在本地缓存中
-- 配置信息按接口类型显示
+# 2.20.1
+- 😄 新增：gpt-4o-2024-08-06
 
-## Perf
-- 优化函数方法 [[kirklin](https://github.com/Chanzhaoyu/chatgpt-web/pull/583)]
-- 字符错误 [[pdsuwwz](https://github.com/Chanzhaoyu/chatgpt-web/pull/585)]
-- 文档描述错误 [[lizhongyuan3](https://github.com/Chanzhaoyu/chatgpt-web/pull/636)]
+# 2.19.10
+- 😄 新增：视频 runway gen3 支持图片
+- 😄 新增：mj 6.1选项
+- 😄 新增：runway-gen3-fast 选项
+- 🐞 修复：LUMA_SERVER 出现标签选项
 
-## BugFix
-- 修复 `Prompt` 导入、导出兼容性错误
-- 修复 `highlight.js` 控制台兼容性警告
+# 2.19.9
+- 🐞 修复：luma 说明
+- 🐞 修复：Midjourney生图后，保留prompt在输入框中 #468
 
-## Other
-- 依赖更新
+# 2.19.8
+- 🐞 修复：runway 过期.重新获取
 
-## v2.10.5
+# 2.19.7
+- 😄 新增：视频 runway 模块
+- 🐞 修复：gpt-4o-mini 图片问题
+- 🐞 修复：luma 说明
+ 
 
-`2023-03-13`
-
-更新依赖，`access_token` 默认代理为 [pengzhile](https://github.com/pengzhile) 的 `https://bypass.duti.tech/api/conversation`
-
-## Feature
-- `Prompt` 商店在线导入可以导入两种 `recommend.json`里提到的模板 [simonwu53](https://github.com/Chanzhaoyu/chatgpt-web/pull/521)
-- 支持 `HTTPS_PROXY` [whatwewant](https://github.com/Chanzhaoyu/chatgpt-web/pull/308)
-- `Prompt` 添加查询筛选
-
-## Enhancement
-- 调整输入框最大行数 [yi-ge](https://github.com/Chanzhaoyu/chatgpt-web/pull/502)
-- 优化 `docker` 打包 [whatwewant](https://github.com/Chanzhaoyu/chatgpt-web/pull/520)
-- `Prompt` 添加翻译和优化布局
-- 「繁体中文」补全和审阅 [PeterDaveHello](https://github.com/Chanzhaoyu/chatgpt-web/pull/542)
-- 语言选择调整为下路框形式
-- 权限输入框类型调整为密码形式
-
-## BugFix
-- `JSON` 导入检查 [Nothing1024](https://github.com/Chanzhaoyu/chatgpt-web/pull/523)
-- 修复 `AUTH_SECRET_KEY` 模式下跨域异常并添加对 `node.js 19` 版本的支持 [yi-ge](https://github.com/Chanzhaoyu/chatgpt-web/pull/499)
-- 确定清空上下文时不应该重置会话标题
-
-## Other
-- 调整文档
-- 更新依赖
-
-## v2.10.4
-
-`2023-03-11`
-
-## Feature
-- 感谢 [Nothing1024](https://github.com/Chanzhaoyu/chatgpt-web/pull/268) 添加 `Prompt` 模板和 `Prompt` 商店支持
-
-## Enhancement
-- 设置添加关闭按钮[#495]
-
-## Demo
-
-![Prompt](https://camo.githubusercontent.com/6a51af751eb29238cb7ef4f8fbd89f63db837562f97f33273095424e62dc9194/68747470733a2f2f73312e6c6f63696d672e636f6d2f323032332f30332f30342f333036326665633163613562632e676966)
-
-## v2.10.3
-
-`2023-03-10`
-
-> 声明：除 `ChatGPTUnofficialProxyAPI` 使用的非官方代理外，本项目代码包括上游引用包均开源在 `GitHub`，如果你觉得本项目有监控后门或有问题导致你的账号、API被封，那我很抱歉。我可能`BUG`写的多，但我不缺德。此次主要为前端界面调整，周末愉快。
-
-## Feature
-- 支持长回复 [[yi-ge](https://github.com/Chanzhaoyu/chatgpt-web/pull/450)][[详情](https://github.com/Chanzhaoyu/chatgpt-web/pull/450)]
-- 支持 `PWA` [[chenxch](https://github.com/Chanzhaoyu/chatgpt-web/pull/452)]
-
-## Enhancement
-- 调整移动端按钮和优化布局
-- 调整 `iOS` 上安全距离
-- 简化 `docker-compose` 部署 [[cloudGrin](https://github.com/Chanzhaoyu/chatgpt-web/pull/466)]
-
-## BugFix
-- 修复清空会话侧边栏标题不会重置的问题 [[RyanXinOne](https://github.com/Chanzhaoyu/chatgpt-web/pull/453)]
-- 修复设置文字过长时导致的设置按钮消失的问题
-
-## Other
-- 更新依赖
-
-## v2.10.2
-
-`2023-03-09`
-
-衔接 `2.10.1` 版本[详情](https://github.com/Chanzhaoyu/chatgpt-web/releases/tag/v2.10.1)
-
-## Enhancement
-- 移动端下输入框获得焦点时左侧按钮隐藏
-
-## BugFix
-- 修复 `2.10.1` 中添加 `OPENAI_API_MODEL` 变量的判断错误，会导致默认模型指定失效，抱歉
-- 回退 `2.10.1` 中前端变量影响 `Docker` 打包
-
-## v2.10.1
-
-`2023-03-09`
-
-注意：删除了 `.env` 文件改用 `.env.example` 代替，如果是手动部署的同学现在需要手动创建 `.env` 文件并从 `.env.example` 中复制需要的变量，并且 `.env` 文件现在会在 `Git` 提交中被忽略，原因如下：
-
-- 在项目中添加 `.env` 从一开始就是个错误的示范
-- 如果是 `Fork` 项目进行修改测试总是会被 `Git` 修改提示给打扰
-- 感谢 [yi-ge](https://github.com/Chanzhaoyu/chatgpt-web/pull/395) 的提醒和修改
-
-
-这两天开始，官方已经开始对第三方代理进行了拉闸， `accessToken` 即将或已经开始可能会不可使用。异常 `API` 使用也开始封号，封号缘由不明，如果出现使用 `API` 提示错误，请查看后端控制台信息，或留意邮箱。
-
-## Feature
-- 感谢 [CornerSkyless](https://github.com/Chanzhaoyu/chatgpt-web/pull/393) 添加是否发送上下文开关功能
-
-## Enhancement
-- 感谢 [nagaame](https://github.com/Chanzhaoyu/chatgpt-web/pull/415) 优化`docker`打包镜像文件过大的问题
-- 感谢 [xieccc](https://github.com/Chanzhaoyu/chatgpt-web/pull/404) 新增 `API` 模型配置变量 `OPENAI_API_MODEL`
-- 感谢 [acongee](https://github.com/Chanzhaoyu/chatgpt-web/pull/394) 优化输出时滚动条问题
-
-## BugFix
-- 感谢 [CornerSkyless](https://github.com/Chanzhaoyu/chatgpt-web/pull/392) 修复导出图片会丢失头像的问题
-- 修复深色模式导出图片的样式问题
-
-
-## v2.10.0
-
-`2023-03-07`
-
-- 老规矩，手动部署的同学需要删除 `node_modules` 安装包重新安装降低出错概率，其他部署不受影响，但是可能会有缓存问题。
-- 虽然说了更新放缓，但是 `issues` 不看， `PR` 不改我睡不着，我的邮箱从每天早上`8`点到凌晨`12`永远在滴滴滴，所以求求各位，超时的`issues`自己关闭下哈，我真的需要缓冲一下。
-- 演示图片请看最后
-
-## Feature
-- 添加权限功能，用法：`service/.env` 中的 `AUTH_SECRET_KEY` 变量添加密码
-- 感谢 [PeterDaveHello](https://github.com/Chanzhaoyu/chatgpt-web/pull/348) 添加「繁体中文」翻译
-- 感谢 [GermMC](https://github.com/Chanzhaoyu/chatgpt-web/pull/369) 添加聊天记录导入、导出、清空的功能
-- 感谢 [CornerSkyless](https://github.com/Chanzhaoyu/chatgpt-web/pull/374) 添加会话保存为本地图片的功能
-
-
-## Enhancement
-- 感谢 [CornerSkyless](https://github.com/Chanzhaoyu/chatgpt-web/pull/363) 添加 `ctrl+enter`  发送消息
-- 现在新消息只有在结束了之后才滚动到底部，而不是之前的强制性
-- 优化部分代码
-
-## BugFix
--	转义状态码前端显示，防止直接暴露 `key`（我可能需要更多的状态码补充）
-
-## Other
-- 更新依赖到最新
-
-## 演示
-> 不是界面最新效果，有美化改动
-
-权限
-
-![权限](https://user-images.githubusercontent.com/24789441/223438518-80d58d42-e344-4e39-b87c-251ff73925ed.png)
-
-聊天记录导出
-
-![聊天记录导出](https://user-images.githubusercontent.com/57023771/223372153-6d8e9ec1-d82c-42af-b4bd-232e50504a25.gif)
-
-保存图片到本地
-
-![保存图片到本地](https://user-images.githubusercontent.com/13901424/223423555-b69b95ef-8bcf-4951-a7c9-98aff2677e18.gif)
-
-## v2.9.3
-
-`2023-03-06`
-
-## Enhancement
-- 感谢 [ChandlerVer5](https://github.com/Chanzhaoyu/chatgpt-web/pull/305) 使用 `markdown-it` 替换 `marked`，解决代码块闪烁的问题
-- 感谢 [shansing](https://github.com/Chanzhaoyu/chatgpt-web/pull/277) 改善文档
-- 感谢 [nalf3in](https://github.com/Chanzhaoyu/chatgpt-web/pull/293) 添加英文翻译
-
-## BugFix
-- 感谢[sepcnt ](https://github.com/Chanzhaoyu/chatgpt-web/pull/279) 修复切换记录时编辑状态未关闭的问题
-- 修复复制代码的兼容性报错问题
-- 修复部分优化小问题
-
-## v2.9.2
-
-`2023-03-04`
-
-手动部署的同学，务必删除根目录和`service`中的`node_modules`重新安装依赖，降低出现问题的概率，自动部署的不需要做改动。
-
-### Feature
-- 感谢 [hyln9](https://github.com/Chanzhaoyu/chatgpt-web/pull/247) 添加对渲染 `LaTex` 数学公式的支持
-- 感谢 [ottocsb](https://github.com/Chanzhaoyu/chatgpt-web/pull/227) 添加支持 `webAPP` (苹果添加到主页书签访问)支持
-- 添加 `OPENAI_API_BASE_URL` 可选环境变量[#249]
-## Enhancement
-- 优化在高分屏上主题内容的最大宽度[#257]
-- 现在文字按单词截断[#215][#225]
-### BugFix
-- 修复动态生成时代码块不能被复制的问题[#251][#260]
-- 修复 `iOS` 移动端输入框不会被键盘顶起的问题[#256]
-- 修复控制台渲染警告
-## Other
-- 更新依赖至最新
-- 修改 `README` 内容
-
-## v2.9.1
-
-`2023-03-02`
-
-### Feature
-- 代码块添加当前代码语言显示和复制功能[#197][#196]
-- 完善多语言，现在可以切换中英文显示
-
-## Enhancement
-- 由[Zo3i](https://github.com/Chanzhaoyu/chatgpt-web/pull/187) 完善 `docker-compose` 部署文档
-
-### BugFix
-- 由 [ottocsb](https://github.com/Chanzhaoyu/chatgpt-web/pull/200) 修复头像修改不同步的问题
-## Other
-- 更新依赖至最新
-- 修改 `README` 内容
-## v2.9.0
-
-`2023-03-02`
-
-### Feature
-- 现在能复制带格式的消息文本
-- 新设计的设定页面，可以自定义姓名、描述、头像（链接方式）
-- 新增`403`和`404`页面以便扩展
-
-## Enhancement
-- 更新 `chatgpt` 使 `ChatGPTAPI` 支持 `gpt-3.5-turbo-0301`（默认）
-- 取消了前端超时限制设定
-
-## v2.8.3
-
-`2023-03-01`
-
-### Feature
-- 消息已输出内容不会因为中断而消失[#167]
-- 添加复制消息按钮[#133]
-
-### Other
-- `README` 添加声明内容
-
-## v2.8.2
-
-`2023-02-28`
-### Enhancement
-- 代码主题调整为 `One Dark - light|dark` 适配深色模式
-### BugFix
-- 修复普通文本代码渲染和深色模式下的问题[#139][#154]
-
-## v2.8.1
-
-`2023-02-27`
-
-### BugFix
-- 修复 `API` 版本不是 `Markdown` 时，普通 `HTML` 代码会被渲染的问题 [#146]
-
-## v2.8.0
-
-`2023-02-27`
-
-- 感谢 [puppywang](https://github.com/Chanzhaoyu/chatgpt-web/commit/628187f5c3348bda0d0518f90699a86525d19018) 修复了 `2.7.0` 版本中关于流输出数据的问题（使用 `nginx` 需要自行配置 `octet-stream` 相关内容）
-
-- 关于为什么使用 `octet-stream` 而不是 `sse`，是因为更好的兼容之前的模式。
-
-- 建议更新到此版本获得比较完整的体验
-
-### Enhancement
-- 优化了部份代码和类型提示
-- 输入框添加换行提示
-- 移动端输入框现在回车为换行，而不是直接提交
-- 移动端双击标题返回顶部，箭头返回底部
-
-### BugFix
-- 流输出数据下的问题[#122]
-- 修复了 `API Key` 下部份代码不换行的问题
-- 修复移动端深色模式部份样式问题[#123][#126]
-- 修复主题模式图标不一致的问题[#126]
-
-## v2.7.3
-
-`2023-02-25`
-
-### Feature
-- 适配系统深色模式 [#118](https://github.com/Chanzhaoyu/chatgpt-web/issues/103)
-### BugFix
-- 修复用户消息能被渲染为 `HTML` 问题 [#117](https://github.com/Chanzhaoyu/chatgpt-web/issues/117)
-
-## v2.7.2
-
-`2023-02-24`
-### Enhancement
-- 消息使用 [github-markdown-css](https://www.npmjs.com/package/github-markdown-css) 进行美化，现在支持全语法
-- 移除测试无用函数
-
-## v2.7.1
-
-`2023-02-23`
-
-因为消息流在 `accessToken` 中存在解析失败和消息不完整等一系列的问题，调整回正常消息形式
-
-### Feature
-- 现在可以中断请求过长没有答复的消息
-- 现在可以删除单条消息
-- 设置中显示当前版本信息
-
-### BugFix
-- 回退 `2.7.0` 的消息不稳定的问题
-
-## v2.7.0
-
-`2023-02-23`
-
-### Feature
-- 使用消息流返回信息，反应更迅速
-
-### Enhancement
-- 样式的一点小改动
-
-## v2.6.2
-
-`2023-02-22`
-### BugFix
-- 还原修改代理导致的异常问题
-
-## v2.6.1
-
-`2023-02-22`
-
-### Feature
-- 新增 `Railway` 部署模版
-
-### BugFix
-- 手动打包 `Proxy` 问题
-
-## v2.6.0
-
-`2023-02-21`
-### Feature
-- 新增对 `网页 accessToken` 调用 `ChatGPT`，更智能不过不太稳定 [#51](https://github.com/Chanzhaoyu/chatgpt-web/issues/51)
-- 前端页面设置按钮显示查看当前后端服务配置
-
-### Enhancement
-- 新增 `TIMEOUT_MS` 环境变量设定后端超时时常（单位：毫秒）[#62](https://github.com/Chanzhaoyu/chatgpt-web/issues/62)
-
-## v2.5.2
-
-`2023-02-21`
-### Feature
-- 增加对 `markdown` 格式的支持 [Demo](https://github.com/Chanzhaoyu/chatgpt-web/pull/77)
-### BugFix
-- 重载会话时滚动条保持
-
-## v2.5.1
-
-`2023-02-21`
-
-### Enhancement
-- 调整路由模式为 `hash`
-- 调整新增会话添加到
-- 调整移动端样式
-
-
-## v2.5.0
-
-`2023-02-20`
-
-### Feature
-- 会话 `loading` 现在显示为光标动画
-- 会话现在可以再次生成回复
-- 会话异常可以再次进行请求
-- 所有删除选项添加确认操作
-
-### Enhancement
-- 调整 `chat` 为路由页面而不是组件形式
-- 更新依赖至最新
-- 调整移动端体验
-
-### BugFix
-- 修复移动端左侧菜单显示不完整的问题
-
-## v2.4.1
-
-`2023-02-18`
-
-### Enhancement
-- 调整部份移动端上的样式
-- 输入框支持换行
-
-## v2.4.0
-
-`2023-02-17`
-
-### Feature
-- 响应式支持移动端
-### Enhancement
-- 修改部份描述错误
-
-## v2.3.3
-
-`2023-02-16`
-
-### Feature
-- 添加 `README` 部份说明和贡献列表
-- 添加 `docker` 镜像
-- 添加 `GitHub Action` 自动化构建
-
-### BugFix
-- 回退依赖更新导致的 [Eslint 报错](https://github.com/eslint/eslint/issues/16896)
-
-## v2.3.2
-
-`2023-02-16`
-
-### Enhancement
-- 更新依赖至最新
-- 优化部份内容
-
-## v2.3.1
-
-`2023-02-15`
-
-### BugFix
-- 修复多会话状态下一些意想不到的问题
-
-## v2.3.0
-
-`2023-02-15`
-### Feature
-- 代码类型信息高亮显示
-- 支持 `node ^16` 版本
-- 移动端响应式初步支持
-- `vite` 中 `proxy` 代理
-
-### Enhancement
-- 调整超时处理范围
-
-### BugFix
-- 修复取消请求错误提示会添加到信息中
-- 修复部份情况下提交请求不可用
-- 修复侧边栏宽度变化闪烁的问题
-
-## v2.2.0
-
-`2023-02-14`
-### Feature
-- 会话和上下文本地储存
-- 侧边栏本地储存
-
-## v2.1.0
-
-`2023-02-14`
-### Enhancement
-- 更新依赖至最新
-- 联想功能移动至前端提交，后端只做转发
-
-### BugFix
-- 修复部份项目检测有关 `Bug`
-- 修复清除上下文按钮失效
-
-## v2.0.0
-
-`2023-02-13`
-### Refactor
-重构并优化大部分内容
-
-## v1.0.5
-
-`2023-02-12`
-
-### Enhancement
-- 输入框焦点，连续提交
-
-### BugFix
-- 修复信息框样式问题
-- 修复中文输入法提交问题
-
-## v1.0.4
-
-`2023-02-11`
-
-### Feature
-- 支持上下文联想
-
-## v1.0.3
-
-`2023-02-11`
-
-### Enhancement
-- 拆分 `service` 文件以便扩展
-- 调整 `Eslint` 相关验证
-
-### BugFix
-- 修复部份控制台报错
-
-## v1.0.2
-
-`2023-02-10`
-
-### BugFix
-- 修复新增信息容器不会自动滚动到问题
-- 修复文本过长不换行到问题 [#1](https://github.com/Chanzhaoyu/chatgpt-web/issues/1)
+# 2.19.6
+- 😄 新增：gpt-4o-mini模型
+- 🐞 修复：viggle 下载有问题
+
+# 2.19.5
+- 🐞 修复：后续会有luma尾帧么 #452
+- 😄 新增：viggle pro 跟 relax 能相互切换
+
+# 2.19.4
+- 🐞 修复：luma pro 与 relax版本切换 获取任务有问题
+
+
+# 2.19.3
+- 🐞 修复：viggle 个人上传视频无效
+
+# 2.19.2
+- 😄 新增：跳舞视频viggle模块
+
+# 2.19.1
+- 🐞 修复：Luma下载按钮无法下载？ #443
+- 🐞 修复：luma pro 与 relax版本切换 获取任务有问题
+- 🐞 修复：suno 歌词 fail 提示，luma 状态 failed 提示
+
+# 2.18.10
+- 🐞 修复：视频按钮提示词，有个小错别字。 #424
+- 🐞 修复：claude-3-5-sonnet-20240620无法上传图片 #425 #427 #430
+- 🐞 修复：LUMA不支持竖屏9:16 这个对于短视频 不友好 官方是支持的 #431
+- 🐞 修复：其实cluade其他模型也是支持识图 #433
+- 😄 新增：LUMA视频 支持 `延展` 每 `延展` `+5s`
+- 😄 修复：LUMA不支持竖屏9:16 这个对于短视频 不友好 官方是支持的 #431
+
+# 2.18.9
+- 🐞 修复：luma download_url bug
+- 🐞 修复：claude-3-5-sonnet-20240620传图片直接给我调用gpt-4-vision-preview #423
+
+# 2.18.8
+- 🐞 修复：无法通过?settings={"key":"{key}","url":"{server}"}设置Suno和Luma #412
+- 😄 升级：suno请求带 `/suno` 前缀
+- 🐞 修复：请求新增逆向模型 `gpt-4o-all` #400
+- 😄 新增： `claude-3-5-sonnet-20240620` 模型
+- 🐞 修复：Bug: 手机版Safari下地址栏遮挡界面 #371
+
+# 2.18.7
+- 😄 新增：支持luma视频
+
+# 2.18.6
+- 😄 升级：suno支持延伸
+- 😄 升级：suno支持 以音频生成音频（需要用到延伸）
+
+# 2.18.5
+- 😄 升级：将suno可版本选择 v3 v3.5
+- 🐞 修复：suno 生成失败 error 状态
+
+# 2.18.4
+- 😄 升级：将suno 升级为3.5版本
+
+# 2.18.3
+- 🐞 重大修复：修复卡死.第二处
+
+# 2.18.2
+- 🐞 重大修复：修复卡死
+
+# 2.18.1
+- 🐞 修复：GPTS页面不支持一个页面一个模型 #378
+- 😄 新增：GPTs页 可以新增gpts
+
+# 2.17.10 
+- 😄 新增：新增自定义可视化模型 #338 参数 `CUSTOM_VISION_MODELS`
+- 🐞 修复：Bug: 设置SYSTEM_MESSAGE后模型依然对KnowledgeCutOffDate有误解 #370
+- 🐞 修复：Bug: 手机版Safari下地址栏遮挡界面 #371
+
+# 2.17.9 
+- 🐞 修复：自定义模型的tokens配置 #362 #333
+- 🐞 修复：手机版界面下 MENU_DISABLE 没有生效 #363
+- 🐞 修复：绘图的时候自动新建一个对话 #365
+
+# 2.17.8
+- 🐞 修复：MJ在等待队列状态下的处理逻辑
+- 😄 优化：读图由原来的 `gpt-4-vision-preview`  改为 自定义
+
+# 2.17.7
+- 🐞 修复：目前对于公式显示似乎有严重问题 #345 (再次修复)
+- 🐞 修复：是否支持已有模型列表的自定义？ #297
+
+# 2.17.6
+- 🐞 修复：目前对于公式显示似乎有严重问题 #345
+- 🐞 修复：MJ漏掉V6的2个按钮 高清2倍.subtle 高清2倍.creative
+- 😄 新增：关于gpts的模型名称传入问题 (支持`g-*`) #334
+- 😄 优化：Markdown优化图片显示
+
+# 2.17.5
+- 🐞 修复：`gpt-4o`,`gpt-4o-2024-05-13` 截止日期
+
+# 2.17.4
+- 🐞 修复：mj放大按钮 有v5变v6
+- 😄 新增：`gpt-4o`,`gpt-4o-2024-05-13` 模型
+
+# 2.17.3
+- 🐞 修复：左侧菜单栏不显示 #327
+# 2.17.2
+- 😄 优化：设置服务端设置 填写key 一键同步mj，suno
+- 😄 优化：左侧菜单栏可以配置 通过环境变量调整 `MENU_DISABLE="gpts,music,gallery"` #308
+- 😄 新增：gemini-pro-1.5 模型 #326
+- 😄 优化：`gemini-pro-vision` `gemini-pro-1.5`   `gpt-4-turbo`,`gpt-4-turbo-2024-04-09`  模型 可读base64图 #326
+
+# 2.17.1
+- 😄 优化：模型选择可搜索
+- 😄 优化：suno错误提示 #305
+- 🐞 修复：mj-api-secret 为空时出错 #295
+- 🐞 修复：fix CLOSE_MD_PREVIEW #316
+
+# 2.16.10
+- 😄 新增：suno音乐 单独模块
+
+# 2.16.9
+- 😄 修复：桌面端程序版本问题
+
+# 2.16.8
+- 😄 新增：桌面端程序
+
+
+# 2.16.7
+- 😄 新增：新模型 `gpt-4-turbo-2024-04-09`
+
+ 
+# 2.16.6
+- 🐞 修复：手机端不支持 `sref` `cref`
+- 😄 新增：`sref` `cref` 上传至discord做为图床 
+- 😄 新增：新模型 `suno-v3`
+
+# 2.16.5
+- 🐞 修复：nPaint image editor sources availability #248
+- 🐞 修复：Bugs in supporing customer models #235
+
+# 2.16.4
+- 😄 新增：turnstile 安全认证
+- 🐞 修复：模型切换导致模型错乱
+- 🐞 修复：访问上传文件需认证
+
+# 2.16.3
+- 😄 新增：MJ `cref` `sref` `cw` 参数 
+- 🐞 修复：MJ功能问题反馈 #228 
+- 🐞 修复：关于余额用量精确度的问题建议 #223
+- 🐞 修复：mj 清参数 按钮
+- 🐞 修复：更新对话模型 未能更新窗口列表
+
+# 2.16.2
+- 😄 新增：MJ `--cref 图片url` 生成角色一致的图像
+- 🐞 优化：新开会话模型 每个会话一个自己的模型 #211 #193 
+
+# 2.16.1
+- 🐞 修复：头像链接加载很慢 #212
+- 🐞 修复：关于模型`claude-3`  `max_tokens` 增加为 4k #214
+
+# 2.15.10
+- 🐞 修复：Midjourney Proxy v2.5.5 API后端不接受 index为0的重绘提交 #209 #210 感谢 @hugoshao PR
+- 🐞 修复：Drawing 多语言本地化问题  #201 感谢 @hugoshao PR
+- 😄 新增：`claude-3-sonnet-20240229` `claude-3-opus-20240229` 而 `claude-3-opus-20240229` 可支持传图 #207
+
+# 2.15.9
+- 🐞 修复：聊天记录能导出，但是导入没成功 #197
+- 😄 PR：编辑对话内容 感谢 PR人 @bigQY
+
+# 2.15.8
+- 🐞 修复：dark模型下的code显示有问题
+- 😄 新增：环境变量 `UPLOAD_TYPE` 指定上传方式 ['R2' R2上传] ['API' 跟随UI前端中转]、['Container' 本地容器]、['MyUrl' 自定义链接]   #178
+- 😄 调整：MJ默认调整为 `v6`
+
+# 2.15.7
+- 🐞 修复：mj提交错误提示 规范化
+- 😄 新增：实时语音识别
+
+# 2.15.6
+- 🐞 修复：微信绘图弹窗兼容问题 #177 
+- 😄 新增：环境变量控制 `CLOSE_MD_PREVIEW=1`，是否开启输入MD预览 #124
+- 😄 新增：防爆破验证 相关变量 `AUTH_SECRET_ERROR_COUNT=3` `AUTH_SECRET_ERROR_TIME=10`
+
+# 2.15.5
+- 🐞 修复：授权提示 `请重新输入授权访问密码`
+- 😄 新增：提交版本信息
+- 😄 新增：@触发使用过的GPTs #140
+
+# 2.15.4
+- 🐞 修复：mj 上传文件 服务端授权认证( vercel 暂不支持) #157
+# 2.15.3
+- 🐞 修复：服务端授权认证( vercel 暂不支持) #138
+
+# 2.15.2
+- 😄 新增： 输入预览 增加md功能 #124
+- 🐞 修复： 更新模型logo未变化 #137
+- 😄 新增： 模型 `gpt-3.5-turbo-0125`
+- 😄 新增： MJ 模型 `niji V6`
+
+# 2.15.1
+- 🐞 修复： tts转化在微信内播放有问题 #126 @yoke1990
+- 🐞 修复： 自定义GPTs 在vercel 不可使用 #115
+- 🐞 修复： 针对每一个对话分别设置模型无效 #128 感谢
+- 🔨 优化： MJ 绘画选项组合优化，减少提示词给mj提示错误 #127 感谢 @yoke1990
+- 🔨 优化： 清空同时清空标题 #117  
+- 😄 新增： 环境变量主题 `SYS_THEME` 主题 `light`或者`dark` 默认 `dark` ( 新版本需要 清缓存 ) #123
+
+
+# 2.14.10
+- 😄 新增： TTS 人物设置
+- 😄 新增： 环境变量 `UPLOAD_IMG_SIZE` #27
+- 🔨 优化： GPTs 踩、赞 
+- 🔨 优化： 自定义GPTs
+
+# 2.14.9
+- 😄 新增： 模型 `gpt-4-0125-preview`
+
+# 2.14.8
+- 🐞 修复：垫图图片不能2次使用
+- 😄 新增：标头 列表页
+
+# 2.14.7
+- 😄 新增： 补回`temperature` 和 `top_p` `presence_penalty` `frequency_penalty`设置  #86
+- 😄 优化： 切换模型中  所有设置能随着对话框保存
+- 🐞 修复： 默认画图打开 #99
+
+# 2.14.6
+- 😄 新增： 语言版本`法语` `土耳其语` 感谢 @M4K4R PR
+- 🐞 修复： 手机端token被遮挡  #98
+- 🐞 修复： 环境变量 打开wsrv图片图床 `MJ_IMG_WSRV=1`
+- 🐞 修复： midjourney图片 wsrv图床 bug
+
+# 2.14.5
+- 😄 新增： midjourney wsrv访问图片
+# 2.14.4
+- 🐞 修复：手机端的页面绘画不出图 #59
+- 🐞 修复：midjourney 强制刷新不起作用
+# 2.14.3
+- 😄 新增： 角色自定到会话 #75 #40
+- 😄 新增： 支持one-api部署聊天 https://vercel.ddaiai.com/#/?settings={%22key%22:%22sk-abc%22,%22url%22:%22https://api.openai.com%22}
+
+# 2.14.2
+- 🐞 修复： gpt-4-1106-preview 模型 128000 #66
+- 😄 新增： 录音whisper转文本对话ChatGPT
+- 😄 新增： 对话内容tts转语音
+- 😄 新增： 文件上传支持 `cloudflare r2 存储` 感谢 @xuzhenjun130 PR
+
+# 2.14.1
+- 🐞 修复： gpt-4-1106-preview 模型 128k #66
+- 🐞 修复： 余额显示方式 #61
+- 😄 新增： `DISABLE_GPT4=1` 控制不让用 GPT-4 #65
+- 😄 新增： `OpenAi Api Key 错误` 对话框中出现引导设置
+
+# 2.13.10
+- 🔨 优化： 输入实时计算剩余tokens #63
+- 🐞 修复： 重新获取bug
+
+# 2.13.9
+- 😄 新增： 超链设置
+
+# 2.13.8
+- 🐞 修复： #55 将画图提示词加到2000字
+- 🔨 优化： 上传.加入进度条
+- 😄 新增： midjourney `清设置`按钮
+- 😄 新增： midjourney `自定义变焦`功能
+
+
+# 2.13.7
+- 🐞 修复： #55 名称错误
+- 😄 新增： midjourney shorten 操作
+- 🐞 修复： 手机端无GPTs入口
+
+# 2.13.6
+- 🔨 优化： UI服务端保存
+- 😄 新增： 国际化语言包
+
+## 2.13.5
+- 🐞 修复： 历史记录未带附件链接
+- 😄 新增： 系统通知 #47
+
+## 2.13.4
+- 🐞 修复： midjourney 参数不起作用
+
+## 2.13.3
+- 😄 更新： 更新本月使用量、余额的请求方式
+
+## 2.13.2 
+- 🐞 修复： midjourney 刷新错误
+- ✅ 新增： tts whisper 界面支持
+- 😄 新增： midjourney 新增 V6
+
+
+## 2.13.1 
+- 🐞 修复： gpts 加载排序
+- 😄 新增： google、百度统计
+- 😄 新增： 文件支持拖拽上传、粘贴截图上传 #39
+
+
+## 2.12.11 
+- 🐞 紧急修复： gpt-4-vision-preview 格式错误
+
+## 2.12.10 
+- 🐞 修复：希望实现左侧绘画功能区固定，不随对话界面上下滚动 #29
+- 🐞 修复：当服务端有错误，ui错误显示为空bug 
+- 🔨 优化：新增 `CUSTOM_MODELS` 环境变量 可自定义可选模型 #32
+ 
+
+
+## 2.12.9 
+- 🐞 修复：按住回车不放，会一直触发提交刷新页面 #24
+- 🔨 优化：我的画廊 支持来之服务端的数据（适合自建服务器）
+- 🔨 优化：midjourney 新增 `原始链接` 按钮
+
+## 2.12.8
+- 😄 新增：我的画廊
+- 🐞 修复：重试按钮、停止按钮功能 #15
+
+
+## 2.12.7
+- 😄 新增：vercel 增加 AUTH_SECRET_KEY 可以访问输入验证 #15
+- 🐞 修复：OPENAI_API_MODEL 默认模型 同时支持 vercel #16
+- 🐞 修复：在手机端左侧没法下滑 #18
+
+
+## 2.12.6
+- 🐞 修复：`经常出现“新建聊天框”遮挡对话框的情况 ` #13
+- 🐞 修复：当GPTS在绘画窗口，切换不起效果
+- 🐞 修复：分页载入GPTs计数出现的问题
+
+## 2.12.5
+- 🔨 优化：丰富 GPTS 内容，可以搜索
+- 😄 新增：前端UI 设置 上传文件入口 #11
+- 🐞 修复：`经常出现“新建聊天框”遮挡对话框的情况 ` #13
+
+
+## 2.12.4
+- 😄 新增 dall-e-2模型
+- 🐞 修复：上传错误提示为空
+- 🐞 修复：`环境变量中配置的OPENAI_API_BASE_URL和OPENAI_API_KEY依旧没有效果，前端对话一直处于“思考中...”` #4
+
+## 2.12.3
+- 😄 新增 支持超链模型切换 http://ip:6013/#/m/gpt-4-all http://ip:6013/#/m/gpt-4-gizmo-1234
+- 😄 新增 支持 GPTs 多模态
+
+## 2.12.2
+- 😄 新增：支持文件后端上传（供给gpt-4-all gpt-4-gizmo-xxx 模型）！ 默认是关闭的 打开需要环境变量 API_UPLOADER=1
+- 😄 新增：支持逆向模型 gpt-4-all gpt-4-v gpt-4-gizmo-(gizmo_id)
+
+## 2.12.1
+- 😄 新增：图片上传图片 供gpt-4-vision-preview使用
+- 🐞 修复:：midjourney 辅助提示“模型版本” 去掉早期过时版本
+
+## 2.11.10
+- 🐞 修复：dall-e-3的大小规格
+- 😄 新增：gpt模型选择
+- 😄 新增：gpt自定义模型、上下文数、回复数
+- 🔩 更改：流请求方式由原来的axios改为fetch 打字效果更加顺滑
+
+## 2.11.9 
+- 😄 新增：dall-e-3 画图 
+## 2.11.8
+- 🐞 修复：midjourney 辅助提示“性格” 出现的bug
+- 😄 新增：最新版本检查
+- 😄 新增：midjourney 获取seed
+
+## 2.11.7
+- 😀 新增：midjourney 换脸
+- 😀 新增：midjourney 混图

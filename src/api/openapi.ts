@@ -243,7 +243,10 @@ export const subGPT= async (data:any, chat:Chat.Chat )=>{
    let action= data.action;
    // mlog("gp-image-1 base64Array ",   data.base64Array   )
    //chat.myid=  `${Date.now()}`;
-   if(  action=='gpt.dall-e-3' && data.data && data.data.model && data.data.model.indexOf('ideogram')>-1 ){ //ideogram
+   const isDall=  action=='gpt.dall-e-3' || isDallImageModel( data.data?.model) ||  data.data?.model?.indexOf('banana')
+   
+   //if(  action=='gpt.dall-e-3' && data.data && data.data.model && data.data.model.indexOf('ideogram')>-1 ){ //ideogram
+   if( isDall && data.data && data.data.model && data.data.model.indexOf('ideogram')>-1 ){ //ideogram
          mlog("ddlog 数据 ", data.data  )
          try{
             let d= await ideoSubmit(data.data );
@@ -260,7 +263,7 @@ export const subGPT= async (data:any, chat:Chat.Chat )=>{
             chat.loading=false;
             homeStore.setMyData({act:'updateChat', actData:chat });
          }
-   }else if(  action=='gpt.dall-e-3'  && data.data.base64Array!=undefined ){ //执行变化
+   }else if( isDall  && data.data.base64Array!=undefined ){ //执行变化
         mlog("gp-image-1 base64Array ",data.data ,  data.data.base64Array   )
      //let d= await gptFetch('/v1/images/edits', data.data);
      const formData = new FormData( ); 
@@ -270,6 +273,9 @@ export const subGPT= async (data:any, chat:Chat.Chat )=>{
                  formData.append('image[]', f.file )
             }
         }else{
+            if(o=='size' && data.data[o]=='auto'){
+                continue;
+            }
             formData.append(o, data.data[o])
         }
        
@@ -304,7 +310,7 @@ export const subGPT= async (data:any, chat:Chat.Chat )=>{
     }
     
 
-   }else if(  action=='gpt.dall-e-3' ){ //执行变化
+   }else if( isDall ){ //执行变化
        // chat.model= 'dall-e-3';
        
 
@@ -337,6 +343,7 @@ export const isDallImageModel =(model:string|undefined)=>{
     if( model.indexOf('flux')>-1 ) return true; 
     if( model.indexOf('ideogram')>-1 ) return true; 
     if( model.indexOf('gpt-image')>-1 ) return true;  
+   
     return ['dall-e-2' ,'dall-e-3','ideogram' ].indexOf(model)>-1
       
 }
@@ -402,7 +409,10 @@ return DEFAULT_SYSTEM_TEMPLATE;
 }
 
 export const isNewModel=(model:string)=>{
-    return model.startsWith('o1-') ||   model.includes('gpt-5')
+    return model.startsWith('o1-')// ||   model.includes('gpt-5')
+}
+export const isClaudeModel=(model:string)=>{
+    return model.includes('claude')
 }
 export const subModel= async (opt: subModelType)=>{
     //
@@ -411,6 +421,7 @@ export const subModel= async (opt: subModelType)=>{
     let temperature= 0.5;
     let top_p= 1;
     let presence_penalty= 0 , frequency_penalty=0;
+    let forbidden_stream= false
     if(opt.uuid){
         const chatSet= new chatSetting( +opt.uuid);
         const gStore= chatSet.getGptConfig();
@@ -419,6 +430,7 @@ export const subModel= async (opt: subModelType)=>{
         presence_penalty = gStore.presence_penalty??presence_penalty;
         frequency_penalty = gStore.frequency_penalty??frequency_penalty;
         max_tokens= gStore.max_tokens;
+        forbidden_stream= gStore.forbidden_stream?gStore.forbidden_stream:false
     }
     if(model=='gpt-4-vision-preview' && max_tokens>2048) max_tokens=2048;
 
@@ -430,21 +442,29 @@ export const subModel= async (opt: subModelType)=>{
     let body:any ={
             max_tokens ,
             model ,
-            temperature,
-            top_p,
-            presence_penalty ,frequency_penalty,
+           temperature,
+           top_p,
+           presence_penalty ,frequency_penalty,
             "messages": opt.message
-           ,stream:true
+           ,stream:!forbidden_stream
         }
-    if(isNewModel(model)){
+    if(isClaudeModel(model)){
+        body ={
+            max_completion_tokens:max_tokens ,
+            model , 
+            "messages": opt.message
+           ,stream:!forbidden_stream
+        }
+    }else if(isNewModel(model)){
         body ={
             max_completion_tokens:max_tokens ,
             model ,
             //temperature,
-            top_p,
-            presence_penalty ,frequency_penalty,
+            //top_p,
+           // presence_penalty ,frequency_penalty,
             "messages": opt.message
-           ,stream:false
+           //,stream:false
+           ,stream:!forbidden_stream
         }
     }
     if(body.stream){ 
@@ -499,10 +519,15 @@ export const subModel= async (opt: subModelType)=>{
             opt.onMessage({text: t('mj.thinking') ,isFinish: false })
             let obj :any= await gptFetch( '/v1/chat/completions',body  )
             //mlog('结果 >>',obj   )
-            opt.onMessage({text:obj.choices[0].message.content??'' ,isFinish: true ,isAll:true})
+            try {
+                opt.onMessage({text:obj.choices[0].message.content??'' ,isFinish: true ,isAll:true})
+            } catch (error) {
+                mlog('❌未错误4', obj )
+                opt.onError && opt.onError(obj)
+            }     
             
         } catch (error ) {
-            mlog('❌未错误2',error  )
+            mlog('❌未错误3',error  )
             opt.onError && opt.onError(error)
         }
     }

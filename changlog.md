@@ -2,6 +2,11 @@
 
 #  计划 
 
+# 2.26.8
+- 😄 支持：seedance视频官方接口入口
+- 😄 支持：minimax视频官方接口入口
+
+
 # 2.26.7
 - 😄 修复 kling 视频加了 `kling-v2-6`
 - 😄 修复 kling 模型 `kling-v2-1` `kling-v3`

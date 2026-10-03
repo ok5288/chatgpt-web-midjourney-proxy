@@ -547,7 +547,7 @@ export default {
         moban2: "Şablon Adı",
         use: "Kullan"
     },
-    "声音": "Ses",
+  "声音": "Ses",
   "分辨率": "Çözünürlük",
   "首帧": "İlk Kare",
   "尾帧": "Son Kare",
